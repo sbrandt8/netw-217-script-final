@@ -8,6 +8,7 @@ OPTION_1() {
 	cat /etc/group
 }
 
+# Add group
 OPTION_2() {
 	read -p "Input the group name: " GROUP
 	sudo groupadd $GROUP
