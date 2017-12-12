@@ -39,7 +39,7 @@ OPTION_5() {
 OPTION_6() {
 	read -p "Input the existing user you would like to add to the group: " USER
 	read -p "Input the group you would like the existing user to go into: " GROUP
-	sudo usermod –aG $GROUP $USER
+	sudo usermod -aG $GROUP $USER
 	echo
 }
 
