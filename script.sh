@@ -24,7 +24,9 @@ OPTION_3() {
 
 #Removing a user from a group
 OPTION_4() {
-
+	read -p "Input the group you are looking to remove a user from: " GROUP
+	read -p "Input the user you would like to remove: " USER
+	sudo gpasswd -d $USER $GROUP
 	echo
 }
 
@@ -76,7 +78,7 @@ echo "5. Rename a group"
 echo
 echo "6. Add a user to a group"
 echo
-echo "7. Adding a new user"
+echo "7. Add a new user"
 echo
 echo "8. Exit"
 echo
@@ -103,46 +105,43 @@ fi
 case  $USER_INPUT in
 
 	1)
+		#List groups function
 		echo "You selected menu 1."
-		# Call list groups function
 		OPTION_1
 		;;
 	2)
+		#Add a new group function
 		echo "You selected menu 2."
-		# Call add new group function
 		OPTION_2
 		;;
 	3)
+		#Delete a group function
 		echo "You selected menu 3."
-		# Call delete a group function
 		OPTION_3
 		;;
 	4)
+		#Remove a user from a group function
 		echo "You selected menu 4."
-		# Call remove a user from group function
 		OPTION_4
 		;;
 	5)
+		#Rename a group function
 		echo "You selected menu 5."
-		# Call rename a group function
 		OPTION_5
 		;;
 	6)
+		#Add a user to a group function
 		echo "You selected menu 6."
-		# Call add a user to a group function
 		OPTION_6
 		;;
 	7)
+		#Add new user function
 		echo "You selected menu 7."
-		# Call add new user function
 		OPTION_7
 		;;
 	8)
-		echo "You selected menu 8."
-		# Call exit function
+		#Exit function
 		OPTION_8
 		;;
 	*)
-		# Fail
-		echo "You need to select 1-8."
 esac
