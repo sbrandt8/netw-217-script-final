@@ -1,8 +1,9 @@
-
 #!/bin/bash
 
-#Function
 
+#
+#Functions called by user selection.
+#
 #Get groups
 OPTION_1() {
 	cat /etc/group
@@ -49,14 +50,15 @@ OPTION_7() {
 	sudo  useradd $USER
 }
 
+# Else
 OPTION_8() {
 	echo "You have exited the menu."
 	exit
 }
 
 
-#Menu
-
+# Clear the screen and print the menu
+clear
 echo
 echo "You need to select 1-7."
 echo
@@ -83,6 +85,7 @@ echo
 echo "---------------------------------"
 echo
 
+
 #Get User Input
 read -p "Enter a menu item: " USER_INPUT
 
@@ -101,36 +104,45 @@ case  $USER_INPUT in
 
 	1)
 		echo "You selected menu 1."
+		# Call list groups function
 		OPTION_1
 		;;
 	2)
 		echo "You selected menu 2."
+		# Call add new group function
 		OPTION_2
 		;;
 	3)
 		echo "You selected menu 3."
+		# Call delete a group function
 		OPTION_3
 		;;
 	4)
 		echo "You selected menu 4."
+		# Call remove a user from group function
 		OPTION_4
 		;;
 	5)
 		echo "You selected menu 5."
+		# Call rename a group function
 		OPTION_5
 		;;
 	6)
 		echo "You selected menu 6."
+		# Call add a user to a group function
 		OPTION_6
 		;;
 	7)
 		echo "You selected menu 7."
+		# Call add new user function
 		OPTION_7
 		;;
 	8)
 		echo "You selected menu 8."
+		# Call exit function
 		OPTION_8
 		;;
 	*)
-		 echo "You need to select 1-8."
+		# Fail
+		echo "You need to select 1-8."
 esac
