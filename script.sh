@@ -58,7 +58,7 @@ OPTION_8() {
 #Menu
 
 echo
- echo "You need to select 1-7."
+echo "You need to select 1-7."
 echo
 echo "		Welcome to the group tool menu!"
 echo
@@ -87,6 +87,13 @@ echo
 read -p "Enter a menu item: " USER_INPUT
 
 
+# Make sure user entered something by using -z    
+if [[ -z "$USER_INPUT" ]]; then
+	echo "No input entered, you must choose option 1 - 8."
+	
+	# Exit with code 1 / error
+	exit 1
+fi
 
 
 #Determining action
